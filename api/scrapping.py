@@ -1,8 +1,9 @@
 import requests
+import json
 
-def get_team_information(team_name):
-    base_url = "https://www.thesportsdb.com/api/v1/json/3/searchteams.php"
-    params = {"t": team_name}
+def get_team_information(ingredient_name):
+    base_url = "https://www.themealdb.com/api/json/v1/1/filter.php"
+    params = {"i": ingredient_name}
 
     try:
         response = requests.get(base_url, params=params)
@@ -10,19 +11,12 @@ def get_team_information(team_name):
 
         # Analyser la réponse JSON
         data = response.json()
-
-        # Vérifier si l'équipe a été trouvée
-        if data["teams"]:
-            team = data["teams"][0]
-            print(f"Nom de l'équipe: {team['strTeam']}")
-            print(f"Pays: {team['strCountry']}")
-            print(f"Stade: {team['strStadium']}")
-
-        else:
-            print(f"Aucune information trouvée pour l'équipe {team_name}")
-
+        
+        filename = "data.json"
+        with open(filename, "w") as f:
+            json.dump(data, f, indent=4)
     except requests.exceptions.RequestException as e:
         print(f"Une erreur s'est produite lors de la requête : {e}")
 
 # Exemple d'utilisation
-get_team_information("Arsenal")
+get_team_information("chicken_breast")
