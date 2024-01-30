@@ -16,7 +16,7 @@ def hello_post():
         message = data['message']
         return jsonify({'chatbot': f'Hello, {message}!'})
     else:
-        return jsonify({'error': 'Missing "name" parameter in the request body'}), 400
+        return jsonify({'error': 'Missing "message" parameter in the request body'}), 400
 
 # Exécute l'application si ce fichier est exécuté
 if __name__ == '__main__':
