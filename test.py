@@ -66,4 +66,4 @@ retriever = vector.as_retriever()
 retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
 response = retrieval_chain.invoke({"input": "Tu peux me donner des score de match du top14?"})
-print(response["answer"])
+print("Chatbot",response["answer"].split("Réponse:")[1])
