@@ -8,7 +8,14 @@ from langchain_community.document_loaders import WebBaseLoader
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.documents import Document
 from langchain.chains import create_retrieval_chain
+from dotenv import load_dotenv
+import os
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Access the variables
+chatbot_key = os.getenv("CHATBOT_KEY")
 chat = True
 
 def invokeChatbot (user_input) :
@@ -19,8 +26,8 @@ def invokeChatbot (user_input) :
     loader = WebBaseLoader("https://www.bbc.com/sport/football/european-championship/scores-fixtures/2023-11")
     docs = loader.load()
     
-    llm = ChatOpenAI(openai_api_key="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")
-    embeddings = OpenAIEmbeddings(openai_api_key="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")
+    llm = ChatOpenAI(openai_api_key=chatbot_key)
+    embeddings = OpenAIEmbeddings(openai_api_key=chatbot_key)
     output_parser = StrOutputParser()
     text_splitter = RecursiveCharacterTextSplitter()
     documents = text_splitter.split_documents(docs)
