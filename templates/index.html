@@ -95,22 +95,25 @@
       };
       
       function botResponse(rawText) {
-        let data = {
-          message: rawText,
-        };
+    let data = {
+        message: rawText,
+    };
 
-        fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }).then(function (data) {
-          console.log(data);
-          //exemple de retour pour test
-          const msgText = "salut frere";
+    fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(function (answer) {
+        console.log(answer);
 
-          appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-        });
-      }
+        const msgText = answer;
+
+        appendMessage(BOT_NAME, BOT_IMG, "left",  answer);
+    })
+    .catch(error => console.error('Erreur lors de la requête fetch:', error));
+  }
 
       function get(selector, root = document) {
         return root.querySelector(selector);

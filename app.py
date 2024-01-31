@@ -1,5 +1,6 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
+from test import bot_answer
 
 app = Flask(__name__, template_folder='templates')
 app.static_folder = 'static'
@@ -12,20 +13,18 @@ def chat():
 
 @app.route('/api/chat', methods=['POST'])
 def hello_post():
-    print("ahha")
-    print(request.get_json())
     data = request.get_json()
     if 'message' in data:
+        print("get data", data)
         message = data['message']
-        return render_template("index.html")
-       # ici il faudra retourner la vraie reponse du chatbot et la donner au front (faire une nouvelle requete qui va donner)
-       # return jsonify({'chatbot': f'Hello, {message}!'})
-
+        print("get message", message)
+        response = bot_answer(message)
+        print("ahha")
+        print(response)
+        print("ahha")
+        return jsonify(response)
     else:
         return render_template("index.html")
-
-        # return jsonify({'error': 'Missing "message" parameter in the request body'}), 400
-
 
 if __name__ == '__main__':
     app.run(debug=True)
