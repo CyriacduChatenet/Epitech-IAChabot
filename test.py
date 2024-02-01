@@ -23,7 +23,6 @@ def bot_answer(input):
     docs = loader.load()
     llm = Ollama(model="llama2")
     embeddings = HuggingFaceEmbeddings()
-    output_parser = StrOutputParser()
     text_splitter = RecursiveCharacterTextSplitter()
     documents = text_splitter.split_documents(docs)
     vector = FAISS.from_documents(documents, embeddings) 
@@ -47,3 +46,4 @@ def bot_answer(input):
     response = retrieval_chain.invoke({"input": input})
 
     return(response["answer"])
+ 
