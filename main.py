@@ -4,7 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import WebBaseLoader
+from langchain_community.document_loaders import WebBaseLoader, CSVLoader
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.documents import Document
 from langchain.chains import create_retrieval_chain
@@ -23,7 +23,8 @@ def invokeChatbot (user_input) :
     ("system", "You are a journalist."),
     ("user", "{input}")
     ])
-    loader = WebBaseLoader("https://www.bbc.com/sport/football/european-championship/scores-fixtures/2023-11")
+    # loader = WebBaseLoader("https://www.bbc.com/sport/football/european-championship/scores-fixtures/2023-11")
+    loader = CSVLoader(file_path="data.csv")
     docs = loader.load()
     
     llm = ChatOpenAI(openai_api_key=chatbot_key)
@@ -47,7 +48,7 @@ def invokeChatbot (user_input) :
     
     document_chain.invoke({
         "input": user_input,
-        "context": [Document(page_content="tell us all matches result")]
+        "context": [Document(page_content="this is only only on top14's teams and match results. To win the championship, you have to be win the final match.")]
     })
     
     retriever = vector.as_retriever()
