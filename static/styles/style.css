@@ -31,10 +31,10 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  width: 100%;
-  max-width: 867px;
-  margin: 25px 10px;
-  height: calc(100% - 50px);
+  width: 50%;
+  /* max-width: 867px; */
+  /* margin: 25px 10px; */
+  height: 90%;
   border: var(--border);
   border-radius: 5px;
   background: var(--msger-bg);
@@ -155,12 +155,12 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  width: 1200px;
+  /* width: 1200px;
   height: 600px;
-  background-size: cover; /* or "contain" depending on what you want */
+  background-size: cover; */
   background-position: center center;
   margin: auto;
-  padding: 0;
+  padding: 0; 
 }
 
 .loader {
