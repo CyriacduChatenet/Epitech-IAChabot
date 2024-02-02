@@ -13,10 +13,11 @@
 * [Inspiration](#inspiration)
 
 ## General info
-This is a school project which aim was to create an innovative chatbot to help people to grow a better business. We had to to it in pairs.
-<br>We chose to focus on e-commerce businesses. Lil Bot the chatbot allows the user to submit information about the item that he wants to buy. Then, Lil Bot gives back the perfect article corresponding to the criteria. By this mean, people tend to buy more articles and faster, which increase the sales of the e-shop.
-<br><br>We had 42 days to implement the project.
-<br><br>Here, you can find the source code of a demonstration use of Lil Bot in a clothes e-shop, but the algorithm can be adapted to any kind of shop.
+This is a school project which aim was to create an innovative chatbot capable of using Natural Langage Processing (NLP) to retreive answers in a string-typed database. 
+The database was scraped using Langchain.
+<br>We chose to focus on the sport topic, precisely, football. Footix the chatbot allows the user to ask information about anything related to football. Then, it gives back the corresponding answer, using NLP, within 10 seconds!
+<br><br>We had 14 days to implement the project. We made it in 5.
+<br><br>Here, you can find the source code of Footix, the football chatbot, but the algorithm could be adapted to any kind of subject. We also added a scraping script we coded to be able to retreive the european championship scores : `scraping.py`
 
 ## Screenshots
 
