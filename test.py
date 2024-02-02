@@ -2,7 +2,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import WebBaseLoader
+from langchain_community.document_loaders import WebBaseLoader, CSVLoader
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.documents import Document
 from langchain.chains import create_retrieval_chain
@@ -19,9 +19,12 @@ def bot_answer(input):
         ("system", "You are a journalist."),
         ("user", "{input}")
     ])
-    loader = WebBaseLoader("https://www.lequipe.fr/Rugby/top-14/page-calendrier-resultats/13e-journee")
+
+    # Un-comment the line below to be able to scrap the Ligue 1 results and comment the line 25 
+    # loader = WebBaseLoader("https://www.lequipe.fr/Football/ligue-1/page-calendrier-resultats")
+    loader = CSVLoader(file_path="results.csv")
     docs = loader.load()
-    llm = Ollama(model="llama2")
+    llm = Ollama(model="mistral")
     embeddings = HuggingFaceEmbeddings()
     text_splitter = RecursiveCharacterTextSplitter()
     documents = text_splitter.split_documents(docs)
@@ -38,7 +41,7 @@ def bot_answer(input):
 
     document_chain.invoke({
         "input": input,
-        "context": [Document(page_content="affichage des score de la 13ieme journee de top14")]
+        "context": [Document(page_content="question's subject are the football results between 1872 and 2023")]
     })
 
     retriever = vector.as_retriever()

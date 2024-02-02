@@ -24,7 +24,7 @@ def invokeChatbot (user_input) :
     ("user", "{input}")
     ])
     # loader = WebBaseLoader("https://www.bbc.com/sport/football/european-championship/scores-fixtures/2023-11")
-    loader = CSVLoader(file_path="data.csv")
+    loader = CSVLoader(file_path="results.csv")
     docs = loader.load()
     
     llm = ChatOpenAI(openai_api_key=chatbot_key)
