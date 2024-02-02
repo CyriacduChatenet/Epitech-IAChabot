@@ -60,9 +60,19 @@ https://www.python.org/downloads/
 <br><br><br>
 4- Follow the possible package installations that will be asked by the Langchain dependances
 <br><br><br>
-5- ⚠️ If you want to scrap the Ligue 1 data (and not be using the `results.csv` data), you need to go into the `test.py` file, uncomment the line 24 and comment the line 25 ⚠️
+5- Run the `app.py` file:
+<br><br>
+`python app.py`
+<br><br><br>
+6- Go onto your local webserver, paste this url on your browser:
+<br><br>
+http://127.0.0.1:5000/api/chat
+<br><br><br>
+⚠️ If you want to scrap the Ligue 1 data (and not be using the `results.csv` data), you need to go into the `test.py` file, uncomment the line 24 and comment the line 25 ⚠️
 
 ## Features
+
+* Prompt about football 
 
 ## Team
 Project made by 
