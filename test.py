@@ -19,7 +19,9 @@ def bot_answer(input):
         ("system", "You are a journalist."),
         ("user", "{input}")
     ])
-    # loader = WebBaseLoader("https://www.lequipe.fr/Rugby/top-14/page-calendrier-resultats/13e-journee")
+
+    # Un-comment the line below to be able to scrap the Ligue 1 results and comment the line 25 
+    # loader = WebBaseLoader("https://www.lequipe.fr/Football/ligue-1/page-calendrier-resultats")
     loader = CSVLoader(file_path="results.csv")
     docs = loader.load()
     llm = Ollama(model="mistral")
