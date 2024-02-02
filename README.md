@@ -68,7 +68,7 @@ https://www.python.org/downloads/
 <br><br>
 http://127.0.0.1:5000/api/chat
 <br><br><br>
-⚠️ If you want to scrap the Ligue 1 data (and not be using the `results.csv` data), you need to go into the `test.py` file, uncomment the line 24 and comment the line 25 ⚠️
+⚠️ If you want to scrap the Ligue 1 data (and not be using the `results.csv` data), you need to go into the `bot.py` file, uncomment the line 24 and comment the line 25 ⚠️
 
 ## Features
 
