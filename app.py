@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
-from test import bot_answer
+from bot import bot_answer
 
 app = Flask(__name__, template_folder='templates')
 app.static_folder = 'static'
