@@ -25,6 +25,7 @@ This is a school project which aim was to create an innovative chatbot to help p
 ## Demo
 
 (No sound for compressing reasons)
+<br>
 https://github.com/CyriacduChatenet/Epitech-IAChabot/assets/63455059/299e078b-bfbb-41a0-b39d-b0bc8acd3d84
 
 ## Technologies
