@@ -13,7 +13,7 @@
 * [Inspiration](#inspiration)
 
 ## General info
-This is a school project which aim was to create an innovative chatbot capable of using Natural Langage Processing (NLP) to retreive answers in a string-typed database. 
+This is a school project which aim was to create an innovative chatbot capable of using Natural Langage Processing (NLP) to retreive answers from a string-typed database. 
 The database was scraped using Langchain.
 <br>We chose to focus on the sport topic, precisely, football. Footix the chatbot allows the user to ask information about anything related to football. Then, it gives back the corresponding answer, using NLP, within 10 seconds!
 <br><br>We had 14 days to implement the project. We made it in 5.
