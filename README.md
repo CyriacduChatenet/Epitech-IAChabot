@@ -26,7 +26,7 @@ This is a school project which aim was to create an innovative chatbot to help p
 
 (No sound for compressing reasons)
 <br>
-https://github.com/CyriacduChatenet/Epitech-IAChabot/assets/63455059/299e078b-bfbb-41a0-b39d-b0bc8acd3d84
+https://github.com/CyriacduChatenet/Footix/assets/63455059/7dafad26-2597-4c88-ab2c-b48332e596c6
 
 ## Technologies
 * Python 3.11.7
